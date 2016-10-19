@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
+@model PlanYourTrip.Models.Place
 
 <h2>Index</h2>
 
@@ -58,6 +59,15 @@
 
         // a sample list of JSON encoded data of places to visit in Tunisia
         // you can either make up a JSON list server side, or call it from a controller using JSONResult
+
+ 
+
+        
+
+        @*var data = [
+                  { "Id": @Model.Id, "PlaceName": @Model.PlaceName, "GeoLong": @Model.GeoLong, "GeoLat": @Model.GeoLat }
+               ];*@
+
         var data = [
                   { "Id": 1, "PlaceName": "Mi Casa Actual", "GeoLong": "55.968701", "GeoLat": "-3.185612" },
                   { "Id": 2, "PlaceName": "Mi primera Casa ", "GeoLong": "55.972841", "GeoLat": "-3.175769" },
