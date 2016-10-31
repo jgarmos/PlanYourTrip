@@ -17,11 +17,19 @@
 <!-- This is the div that will contain the Google Map -->
 <div id="map_canvas" style="height: 450px;"></div>
 
+    <script src="../../Scripts/maps.js"></script>
+
+
 <!-- Enclose the Javascript in a "section" so that it is rendered in the correct order after scripts have been loaded etc -->
 @section scripts {
     <section class="scripts">
 
         <script type="text/javascript">
+
+            //newPop up
+
+
+
 
 
     // This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded. -->
@@ -69,15 +77,22 @@
             // put in some information about each json object - in this case, the opening hours.
             var infowindow = new google.maps.InfoWindow({
                 content: "<div class='infoDiv'><h2>" + item.PlaceName + "</div></div>"
-            });
+
+                //new staff yujuuuuu!!!!
+                //content: "<div class='moving-zone'><div class='popup'><div class='popup-content'><div class='popup-text'>" + item.PlaceName + "</div></div></div></div>"
+                     });
 
             // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
-            google.maps.event.addListener(marker, 'click', function () {
+            google.maps.event.addListener(marker, 'mousemove', function () {
                 infowindow.open(map, marker);
+            });
+            google.maps.event.addListener(marker, 'mouseout', function () {
+                infowindow.close(map, marker);
             });
 
         })
     }
+
         </script>
     </section>
 }
